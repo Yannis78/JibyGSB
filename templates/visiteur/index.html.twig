@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des visiteurs{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="my-5">
+            Gestion des visiteurs 
+
+        </h1> 
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th><h6>Numéro</h6></th>
+                    <th><h6>Nom</h6></th>
+                    <th><h6>Prénom</h6></th>
+                    <th><h6>Adresse</h6></th>
+                    <th><h6>Nombre de Rapports</h6></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for visiteur in lesvisiteurs %}
+                <tr>
+                    <td>{{visiteur.id}}</td>
+                    <td>{{visiteur.nom}}</td>
+                    <td>{{visiteur.prenom}}</td>
+                    <td>{{visiteur.adresse}}</td>
+                    <td>{{visiteur.rapportVisites | length}}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                        <a href="#" class="btn btn-danger" onclick="return confirm(`Voulez vous vraiment supprimer l'article numéro : {{visiteur.id}} ?`)"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

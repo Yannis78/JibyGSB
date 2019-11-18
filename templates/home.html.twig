@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %} {% block title %} Accueil {% endblock %} {% block header %}
+
+<h2>Voici le header</h2>
+
+{% endblock %} {% block body %}
+    <div class="container">
+        <div class="jumbotron mt-3">
+            <h1 class="display-5">Bienvenue sur l'application de gestion des rapports de visites.</h1>
+            <p class="lead">Ici vous pourrez créer un compte, créer des rapports de visites, les modifier et les supprimer.</p>
+            <hr class="my-4">
+            <p>Réalisé par Yannis KECIR, Roger BATESA, Jo DIAVOVOKA et Ilyes AIT</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{{ path('rapport') }}" role="button">Voir les rapports</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
